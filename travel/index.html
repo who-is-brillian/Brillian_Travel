@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRAVEL BRLYN</title>
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fruktur&family=Poppins:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <style>
+      :root {
+  --primary: yellowgreen;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  background-color: var(--bg);
+  color: rgb(255, 255, 255);
+}
+
+.body {
+  font-family: "poppins", sans-serif;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(8, 8, 8, 0.8);
+  border-bottom: 1px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: azure;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #ffffff;
+  margin: 0 0.5rem;
+  display: flex;
+}
+
+#menu, .toggle {
+  display: none;
+}
+
+
+/* hero section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url(img/pulau-maladewa.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 70px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.764);
+  line-height: 1, 2;
+  color: #fff;
+}
+
+.hero .content h1 span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #ffffff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: var(--primary);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+/* about section */
+.about,
+.work,
+.contact {
+  padding: 10rem 7% 1.4rem;
+}
+
+.about h2,
+.work h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span,
+.work h2 span,
+.contact h2 span {
+  color: var(--primary);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+/* Work Section */
+.work{
+  background-image: url(img/wallpaperflare.com_wallpaper\ \(6\).jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.work p, .contact p{
+  text-align: center;
+  margin-bottom: 100px;
+}
+.title1{
+  color: white;
+}
+.work-card1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+}
+.work-card1 a img{
+  border-radius: 50%;
+  width: 200px;
+  box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.767)
+}
+.work-card1:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.work-card2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+}
+.work-card2:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.work-card2 a img{
+  border-radius: 50%;
+  width: 200px;
+  box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.767)
+}
+.work-card3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+}
+.work-card3:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.work-card3 a img{
+  border-radius: 50%;
+  width: 200px;
+  box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.767)
+}
+/* contact */
+
+.us{
+  justify-content: center;
+  text-align: center;
+  font-size: 100;
+}
+
+.contact-input{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  margin-left: 250px;
+  margin-right: 250px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contact-input h1{
+  margin-bottom: 20px;
+  color: black;
+}
+
+.contact-input .text-input{
+  margin: 20px;
+  border-bottom: 2px solid gray;
+  padding: 10px;
+  padding-top: 5px;
+  margin-top: 0;
+}
+
+.contact-input .option{
+  border-bottom: 2px solid gray;
+  padding: 10px;
+  margin: 20px;
+  color: grey;
+  padding-top: 5px;
+  margin-top: 0;
+}
+
+.contact-input p{
+  margin: 0;
+  padding:0px 21px;
+  text-align: justify;
+  color: rgb(100, 100, 100);
+  font-weight: 600;
+}
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* contact end */
+
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  padding: 1rem 0 3rem;
+  padding-bottom: 5%;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: var(--bg);
+  transition: 0.3s;
+}
+
+footer .links {
+  margin-bottom: 1.4rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* Media Queries */
+/* laptop */
+@media (max-width: 800px) {
+  html {
+    font-size: 75%;
+  }
+}
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #ffffff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar-extra1{
+    display: flex;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+
+  .work p {
+    font-size: 1.2rem;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+  .contact-input{
+    margin: 10%;
+  }
+}
+/* Mobile Phone */
+@media (max-width: 500px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- navbar start -->
+  <nav class="navbar">
+      <a href="#home" class="navbar-logo">B<span>T</span></div></a>
+
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang kami</a>
+        <a href="#work">Travel</a>
+        <a href="#us">Kontak</a>
+      </div>
+      <section class="navbar-extra1">
+      <div class="navbar-extra">
+        <a href="#" id="menu">
+          <i data-feather="menu"></i>
+        </a>
+      </div>
+        
+     <div id="toggle">
+        <i data-feather="toggle-left"></i>
+      </div>
+    </section>
+    </nav>
+    <!-- navbar end -->
+
+
+    <!-- hero section start -->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>JOIN MY</BR> <span>TRAVEL</span></h1>
+        <a href="join-now.html"><button class="button-64" role="button"><span class="text">Join Now!</span></button></a>
+      </main>
+      </section>
+    <!-- hero section end -->
+
+<!-- about section start -->
+<section id="about" class="about">
+  <h2><span>TENTANG</span> KAMI</h2>
+  
+  <div class="row">
+<div class="about-img">
+<img src="img/Raja-ampat.jpg" alt="Tentang kami">
+</div>
+<div class="content">
+  <h3>Welcome to Brillian Travel</h3>
+  <p>Selamat datang di Brillian Travel, platform eksplorasi gunung yang menyajikan informasi lengkap dan inspiratif tentang keindahan alam Indonesia.
+  <br> Brillian Travel hadir untuk membantu Anda merencanakan petualangan Anda. Dengan panduan perjalanan terperinci, tips aman mendaki gunung, dan informasi tentang tempat-tempat wisata tersembunyi.
+    Bergabunglah dengan kami dalam memeluk petualangan, menghargai keindahan alam, dan merayakan kekayaan budaya Indonesia. Bersama-sama, mari kita menjelajahi pesona gunung di Indonesia dan menciptakan kenangan yang tak terlupakan di alam terbuka yang luas. Selamat datang di Brillian Travel - di sini, petualangan tidak pernah berakhir.</p>
+</div>
+  </div>
+</section>
+<!-- about section end -->
+
+<!-- work section start -->
+<section id="work" class="work">
+  <h2><span>MY</span> TRAVEL</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos libero sed alias expedita recusandae omnis.</p>
+
+  <div class="row">
+
+    <div class="work-card1">
+      <a href="mountain.html"><img src="img/Bromo.jpg" alt="Bromo"></a>
+      <a  class="title1" href="mountain.html"><h1>MOUNTAIN</h1></a>
+    </div>
+    <div class="work-card2">
+      <a href=""><img src="img/bali-bedugul.jpg" alt="bali-bedugul"></a>
+      <a  class="title1" href="mountain.html"><h1>ISLAND</h1></a>
+    </div>
+    <div class="work-card3">
+      <a href=""><img src="img/resort.jpg" alt="Resort"></a>
+      <a  class="title1" href="mountain.html"><h1>BEACH</h1></a>
+    </div>
+  </div>
+</section>
+<!-- work section end -->
+
+<!-- contact section start -->
+
+<section id="us" class="contact">
+  <h2><span>Contact</span> Us</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos libero sed alias expedita recusandae omnis.</p>
+
+  <div class="contact-input">
+    <h1>Contact Us</h1>
+    <p>Your name</p>
+    <input class="text-input" type="text" placeholder="Masukan Nama Anda">
+    <p>Email</p>
+    <input class="text-input" type="text" placeholder="Masukan Email">
+    <p>Paket Travel</p>
+    <select class="option">
+      <option value="pilihan">Pilihan</option>
+      <option value="option1">Paket Keluarga</option>
+      <option value="option2">Paket Pasangan</option>
+      <option value="option3">Paket Komplit</option>
+   </select>
+   <p>Message</p>
+    <input class="text-input" type="text" placeholder="Masukan Pesan">
+    <button class="button-85" role="button">SEND</button>
+  </div>
+</section>
+
+<!-- contact section end -->
+
+<!-- footer start -->
+<footer>
+<div class="socials">
+  <a href="https://www.instagram.com/brlyn_mk/?next=%2F"><i data-feather="instagram"></i></a>
+  <a href="https://web.facebook.com/profile.php?id=100056192124574"><i data-feather="facebook"></i></a>
+  <a href="https://twitter.com/Brilliansj"><i data-feather="twitter"></i></a>
+</div>
+
+<div class="links">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#work">Travel</a>
+  <a href="#us">contact</a>
+</div>
+
+<div class="credit">
+<p>created by <a href="">Brlyn-mk</a>. | &copy; 2023.</p>
+</div>
+</footer>
+<!-- footer end -->
+
+    <!-- feather icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- My javascript -->
+    <script>
+      // toggle class active
+      const navbarNav = document.querySelector(".navbar-nav");
+      // ketika menu di klik
+      document.querySelector("#menu").onclick = ( ) => {
+        navbarNav.classList.toggle("active");
+      };
+
+      // klik di luar sidebar
+      const menu = document.querySelector('#menu');
+
+      document.addEventListener ('click', function (e) {
+        if (!menu.contains(e.target) && !navbarNav.contains(e.target)) {
+          navbarNav.classList.remove('active');
+        }
+      });
+
+      // toggle bg-body
+      const bgColor = document.querySelector("#toggle");
+      bgColor.addEventListener("click", function () {
+      document.body.classList.toggle("body");
+
+});
+
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mountain-view</title>
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fruktur&family=Poppins:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+    :root {
+  --primary: yellowgreen;
+  --bg: #010101;
+    }
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    }
+
+    body {
+    font-family: "poppins", sans-serif;
+    background-color: var(--bg);
+    color: rgb(255, 255, 255);
+    }
+
+    .body {
+    font-family: "poppins", sans-serif;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    }
+
+    html {
+    scroll-behavior: smooth;
+    }
+
+    /* navbar */
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(8, 8, 8, 0.246);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    }
+
+    .navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: azure;
+    font-style: italic;
+    }
+
+    .navbar .navbar-logo span {
+    color: var(--primary);
+    }
+
+    .navbar .navbar-nav a {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+    }
+
+    .navbar .navbar-nav a::after {
+    content: "";
+    display: block;
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+    }
+
+    .navbar .navbar-extra a {
+    color: #ffffff;
+    margin: 0 0.5rem;
+    display: flex;
+    }
+
+    #menu, .toggle {
+    display: none;
+    }
+
+    span{
+      color: var(--primary);
+    }
+
+    #header-text{
+      font-size: 60px;
+    }
+
+    .contain{
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .img-contain{
+    align-items: center;
+    width:100%;
+    height: 100%;
+    }
+    .img-ctn:hover{
+      transform: scale(1.1);
+      transition: 0.5s ease-out;
+    }
+
+    .container1{
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    padding: 50px
+  }
+    .content1{
+      font-size: 10px;
+      display: flex;
+      justify-content: space-around;
+      text-align: left;
+    }
+
+    .text1{
+      margin-top: 100px;
+    }
+
+    .container2{
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+  }
+    .content2{
+      font-size: 10px;
+      display: flex;
+      justify-content: space-around;
+      text-align: left;
+    }
+    
+    .container3{
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px
+  }
+    .content3{
+      font-size: 10px;
+      display: flex;
+      justify-content: space-around;
+      text-align: left;
+    }
+    .container4{
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+  }
+    .content4{
+      font-size: 10px;
+      display: flex;
+      justify-content: space-around;
+      text-align: left;
+    }
+    footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  padding: 1rem 0 3rem;
+  padding-bottom: 5%;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: var(--bg);
+  transition: 0.3s;
+}
+
+footer .links {
+  margin-bottom: 1.4rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: var(--bg);
+  font-weight: 700;
+}
+
+
+    @media (max-width: 800px) {
+     html {
+    font-size: 75%;
+  }
+}
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #ffffff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar-extra1{
+    display: flex;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+/* Atur tata letak dan urutan elemen dalam container 1 */
+.container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.text1 {
+  margin-top: 20px;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-top: 20px;
+}
+.container4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.container3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-top: 20px;
+}
+
+
+  footer {
+    padding: 1rem 0 2rem;
+  }
+
+  footer .socials a {
+    margin: 0 1rem; 
+  }
+
+  footer .links {
+    margin-bottom: 1rem;
+  }
+
+  footer .credit {
+    font-size: 0.6rem; 
+  }
+}
+/* Mobile Phone */
+@media (max-width: 500px) {
+  html {
+    font-size: 55%;
+  }
+}
+</style>
+
+</head>
+<body>
+        <!-- navbar start -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">B<span>T</span></div></a>
+
+    <div class="navbar-nav">
+      <a href="index.html">Home</a>
+      <a href="beach"> Beach</a>
+      <a href="resort">Resort</a>
+      <a href="join-now.html">LOGIN</a>
+    </div>
+    <section class="navbar-extra1">
+    <div class="navbar-extra">
+      <a href="#" id="menu"><i data-feather="menu"></i></a>
+    </div>
+    <div id="toggle">
+      <i data-feather="toggle-left"></i>
+    </div>
+  </section>
+  </nav>
+  <!-- navbar end -->
+
+  <article class="contain">
+    <img class="img-contain" src="img-mountain/background hiro.jpg" alt="gunung-bromo">
+    <h1 id="header-text">Pesona gunung di Indonesia</h1>
+    <marquee behavior="scroll" direction="left">Gunung-gunung Indonesia menawarkan pemandangan alam yang memukau dan keanekaragaman hayati yang luar biasa                Gunung-gunung Indonesia menawarkan pemandangan alam yang memukau dan keanekaragaman hayati yang luar biasa  </marquee>
+    <section class="container1">
+      <h1 id="agung">Gunung <span>Agung</span></h1> 
+      <div class="content1">
+        <p class="text1">Gunung Agung, juga dikenal sebagai Gunung Agung, adalah gunung berapi aktif yang terletak di pulau Bali, Indonesia. Gunung ini merupakan titik tertinggi di pulau tersebut, dengan ketinggian sekitar 3.031 meter (9.944 kaki) di atas permukaan laut. Gunung Agung memiliki makna besar dalam budaya Hindu Bali dan dianggap sebagai gunung suci.
+          Gunung ini telah meletus beberapa kali sepanjang sejarahnya, dengan letusan terbesar terjadi pada tahun 1963 dan 2017. Letusan tahun 1963 sangat menghancurkan, menyebabkan kerusakan luas dan korban jiwa. Ini merupakan salah satu letusan terbesar dan paling dahsyat dalam sejarah Indonesia.
+          Karena aktivitas vulkaniknya, Gunung Agung dipantau secara ketat oleh otoritas Indonesia, dan evakuasi periodik dari komunitas di sekitarnya dilakukan ketika ada peningkatan risiko letusan. Meskipun berpotensi berbahaya, gunung berapi ini juga menarik wisatawan yang datang untuk mengagumi keindahannya dan menjelajahi area sekitarnya.</p>
+          <img class="img-ctn" src="img-mountain/agung.png" alt="Gunung-Agung" width="40%" height="40%">
+        </div>
+    </section>
+    <section class="container2">
+      <h1 id="rinjani" >Gunung <span>Rinjani</span></h1> 
+      <div class="content2">
+        <img class="img-ctn" src="img-mountain/rinjani.png" alt="Gunung-Rinjani" width="60%" height="60%">
+        <p class="text1">Gunung Rinjani adalah gunung berapi yang terletak di Pulau Lombok, Indonesia. Gunung ini adalah gunung tertinggi kedua di Indonesia di luar Papua setelah Gunung Kerinci. Ketinggiannya mencapai sekitar 3.726 meter (12.224 kaki) di atas permukaan laut.
+          Gunung Rinjani dikenal karena keindahan alamnya yang spektakuler, termasuk danau kawahnya yang disebut Segara Anak, serta pemandangan panorama yang menakjubkan. Segara Anak merupakan danau kawah yang terbentuk dari letusan gunung yang kemudian diisi oleh air hujan. Danau ini memiliki nilai spiritual bagi suku Sasak, suku asli Pulau Lombok.
+          Selain keindahannya, Gunung Rinjani juga terkenal karena trek pendakiannya yang menantang. Pendakian ke puncak Gunung Rinjani biasanya dimulai dari desa Sembalun atau desa Senaru, dan melalui jalur-jalur yang curam dan berbatu. Namun, perjalanan ini disertai dengan pemandangan alam yang luar biasa, termasuk hutan tropis, padang rumput pegunungan, danau kawah, serta pemandangan Lautan Hindia yang luas.
+          Gunung Rinjani memiliki nilai penting dalam budaya dan kepercayaan lokal. Gunung ini sering kali menjadi tempat peribadatan dan ritual bagi masyarakat setempat, terutama pada saat perayaan-perayaan agama atau upacara adat.
+          Namun, perlu diingat bahwa pendakian Gunung Rinjani memerlukan persiapan yang matang karena jalur pendakian yang menantang dan kondisi alam yang beragam. Keselamatan dan kesehatan pendaki harus menjadi prioritas utama selama perjalanan.</p>
+        </div>
+    </section>
+    <section class="container3">
+      <h1 id="tumpak-sewu">Gunung <span> Tumpak sewu</span></h1> 
+      <div class="content3">
+        <p class="text1">
+          Gunung Tumpak Sewu adalah salah satu destinasi alam yang menakjubkan di Indonesia, terletak di kawasan Taman Nasional Bromo Tengger Semeru di Jawa Timur. Namanya dalam bahasa Jawa, "Tumpak Sewu", berarti "Seribu Air Terjun", yang merujuk pada ciri khasnya yang paling menonjol: banyaknya aliran air terjun yang menyerupai gugusan air terjun.
+          Salah satu daya tarik utama Gunung Tumpak Sewu adalah air terjunnya yang spektakuler, yang merupakan salah satu yang tertinggi dan terindah di Indonesia. Air terjun utama memiliki ketinggian sekitar 120 meter, dengan air yang turun ke dalam jurang yang dalam, menciptakan pemandangan alam yang luar biasa.
+          Perjalanan menuju Gunung Tumpak Sewu sering kali melibatkan pendakian menantang melalui jalur-jalur yang curam dan medan yang berbatu. Namun, keindahan alam yang memukau dan pemandangan yang menakjubkan yang menanti di akhir perjalanan membuatnya menjadi destinasi yang sangat diinginkan bagi pendaki dan penggemar alam.
+          Selain air terjunnya yang menakjubkan, Gunung Tumpak Sewu juga dikelilingi oleh hutan tropis yang hijau dan pegunungan yang megah, menciptakan suasana yang menenangkan dan memukau bagi para pengunjungnya.
+          Bagi pecinta petualangan dan keindahan alam, Gunung Tumpak Sewu adalah tempat yang harus dikunjungi di Jawa Timur. Namun, perlu diingat untuk selalu menjaga kelestarian alam dan mematuhi aturan-aturan yang berlaku di kawasan tersebut demi menjaga keindahan alam ini untuk generasi mendatang.</p>
+          <img class="img-ctn" src="img-mountain/Tumpak-sewu.png" alt="Gunung-Tumpak-sewu" width="60%" height="60%">
+        </div>
+    </section>
+    <section class="container4">
+      <h1>Gunung <span>Semeru</span></h1> 
+      <div class="content4">
+        <img class="img-ctn" src="img-mountain/semeru.png" alt="Gunung-semeru" width="60%" height="60%">
+        <p class="text1">Gunung Agung, juga dikenal sebagai Gunung Agung, adalah gunung berapi aktif yang terletak di pulau Bali, Indonesia. Gunung ini merupakan titik tertinggi di pulau tersebut, dengan ketinggian sekitar 3.031 meter (9.944 kaki) di atas permukaan laut. Gunung Agung memiliki makna besar dalam budaya Hindu Bali dan dianggap sebagai gunung suci.
+          Gunung ini telah meletus beberapa kali sepanjang sejarahnya, dengan letusan terbesar terjadi pada tahun 1963 dan 2017. Letusan tahun 1963 sangat menghancurkan, menyebabkan kerusakan luas dan korban jiwa. Ini merupakan salah satu letusan terbesar dan paling dahsyat dalam sejarah Indonesia.
+          Karena aktivitas vulkaniknya, Gunung Agung dipantau secara ketat oleh otoritas Indonesia, dan evakuasi periodik dari komunitas di sekitarnya dilakukan ketika ada peningkatan risiko letusan. Meskipun berpotensi berbahaya, gunung berapi ini juga menarik wisatawan yang datang untuk mengagumi keindahannya dan menjelajahi area sekitarnya.</p>
+        </div>
+    </section>
+  </article>
+<!-- footer start -->
+<footer>
+  <div class="socials">
+    <a href="https://www.instagram.com/brlyn_mk/?next=%2F"><i data-feather="instagram"></i></a>
+    <a href="https://web.facebook.com/profile.php?id=100056192124574"><i data-feather="facebook"></i></a>
+    <a href="https://twitter.com/Brilliansj"><i data-feather="twitter"></i></a>
+  </div>
+  
+  <div class="links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Travel</a>
+    <a href="#us">contact</a>
+  </div>
+  
+  <div class="credit">
+  <p>created by <a href="">Brlyn-mk</a>. | &copy; 2023.</p>
+  </div>
+  </footer>
+<!-- footer end -->
+
+        <!-- feather icons -->
+        <script>
+        feather.replace();
+        </script>
+
+        <!-- My javascript -->
+        
+     <script>
+        // toggle class active
+        const navbarNav = document.querySelector(".navbar-nav");
+        // ketika menu di klik
+        document.querySelector("#menu").onclick = ( ) => {
+            navbarNav.classList.toggle("active");
+        };
+
+        // klik di luar sidebar
+        const menu = document.querySelector('#menu');
+
+        document.addEventListener ('click', function (e) {
+            if (!menu.contains(e.target) && !navbarNav.contains(e.target)) {
+            navbarNav.classList.remove('active');
+            }
+        });
+
+        // toggle bg-body
+        const bgColor = document.querySelector("#toggle");
+        bgColor.addEventListener("click", function () {
+        document.body.classList.toggle("body");
+
+         });
+  
+    </script>
+</body>
+</html>

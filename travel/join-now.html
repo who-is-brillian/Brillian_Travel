@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join-now</title>
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fruktur&family=Poppins:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+              :root {
+  --primary: yellowgreen;
+  --bg: #010101;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+    font-family: "poppins", sans-serif;
+    background-color: var(--bg);
+    color: rgb(255, 255, 255);
+    overflow-y: hidden;
+}
+
+.body {
+  font-family: "poppins", sans-serif;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  overflow-y: hidden;
+  border-bottom: 2px solid var(--primary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(8, 8, 8, 0.8);
+  border-bottom: 1px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: azure;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #ffffff;
+  margin: 0 0.5rem;
+  display: flex;
+}
+
+#menu, .toggle {
+  display: none;
+}
+
+/* LOGIN START */
+#us{
+  justify-content: center;
+  text-align: center;
+  font-size: 100;
+  margin: 180px ;
+  box-sizing: border-box;
+  margin-top:140px ;
+  margin-bottom: 50px; ;
+}
+
+.contact-input{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  margin-left: 250px;
+  margin-right: 250px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contact-input h1{
+  margin-bottom: 20px;
+  color: black;
+}
+
+.contact-input .text-input{
+  margin: 20px;
+  border-bottom: 2px solid gray;
+  padding: 10px;
+  padding-top: 5px;
+  margin-top: 0;
+}
+
+.contact-input .option{
+  border-bottom: 2px solid gray;
+  padding: 10px;
+  margin: 20px;
+  color: grey;
+  padding-top: 5px;
+  margin-top: 0;
+}
+
+.contact-input p{
+  margin: 0;
+  padding:0px 21px;
+  text-align: justify;
+  color: rgb(100, 100, 100);
+  font-weight: 600;
+}
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.cbx{
+    display: flex;
+    padding:20px;
+}
+/* LOGIN END */
+
+
+/* Media Queries */
+/* laptop */
+@media (max-width: 800px) {
+  html {
+    font-size: 75%;
+  }
+}
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #ffffff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar-extra1{
+    display: flex;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .contact .row {
+    flex-wrap: wrap;
+  }
+  .contact-input{
+    margin: 20%;
+  }
+}
+/* Mobile Phone */
+@media (max-width: 500px) {
+  html {
+    font-size: 55%;
+  }
+}
+    </style>
+</head>
+<body>
+        <!-- navbar start -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">B<span>T</span></div></a>
+
+    <div class="navbar-nav">
+      <a href="index.html">Home</a>
+    </div>
+    <section class="navbar-extra1">
+    <div class="navbar-extra">
+      <a href="#" id="menu"><i data-feather="menu"></i></a>
+    </div>
+    <div id="toggle">
+      <i data-feather="toggle-left"></i>
+    </div>
+  </section>
+  </nav>
+  <!-- navbar end -->
+
+  <!-- LOGIN START -->
+
+<section id="us" class="contact">
+    <div class="contact-input">
+      <h1>LOGIN</h1>
+        <p>Your name</p>
+      <input class="text-input" type="text" placeholder="Masukan Nama Anda">
+        <p>Email</p>
+      <input class="text-input" type="text" placeholder="Masukan Email">
+        <p>Password</p>
+      <input class="text-input" type="password" placeholder="Masukan password">
+      <div class="cbx">
+          <input type="checkbox">
+        <p>Remember me</p>
+      </div>
+      <button class="button-85" role="button">SEND</button>
+    </div>
+</section>
+
+<!-- LOGIN END -->
+
+      <!-- feather icons -->
+      <script>
+        feather.replace();
+      </script>
+  
+      <!-- My javascript -->
+      <script>
+        // toggle class active
+        const navbarNav = document.querySelector(".navbar-nav");
+        // ketika menu di klik
+        document.querySelector("#menu").onclick = ( ) => {
+          navbarNav.classList.toggle("active");
+        };
+  
+        // klik di luar sidebar
+        const menu = document.querySelector('#menu');
+  
+        document.addEventListener ('click', function (e) {
+          if (!menu.contains(e.target) && !navbarNav.contains(e.target)) {
+            navbarNav.classList.remove('active');
+          }
+        });
+  
+        // toggle bg-body
+        const bgColor = document.querySelector("#toggle");
+        bgColor.addEventListener("click", function () {
+        document.body.classList.toggle("body");
+  
+  });
+  
+      </script>
+</body>
+</html>
